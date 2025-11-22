@@ -1,38 +1,57 @@
-Security Api Rest
+Security API Rest
 
-Mancha Minaya Abel Angelo
+Autor: Mancha Minaya Abel Angelo
 
-Tecnologias
+Tecnologías
 
-•	java 17
-•	Spring Boot 3
-•	Spring Security 6
-•	MySQL Workbench 8.0 CE
-•	Postman
+Este proyecto utiliza las siguientes tecnologías:
 
-"Contraseña: 12345"
+Java 17
+
+Spring Boot 3
+
+Spring Security 6
+
+MySQL Workbench 8.0 CE
+
+Postman
+
+Descripción
+
+Este proyecto implementa una API REST de seguridad, diseñada para proporcionar acceso diferenciado a los recursos basados en el tipo de usuario autenticado. Los usuarios pueden tener diferentes roles, como administrador o empleado, lo que les otorga permisos sobre ciertas rutas de la API.
+
+Contraseña de ejemplo para autenticación: 12345
 
 Endpoints
-Metodo	URL	Accesos	Resultado
-GET	/api/publico		Todos (incluido anonimo	200 OK
-GET	/api/interno		Usuarios autenticados	200 OK(teniendo credenciales)
-GET	/api/admin/gestion	Solo ROLE_ADMIN	200 OK admin / 403 usuario
 
+A continuación se detallan los endpoints disponibles y los accesos necesarios para cada uno:
 
+Método	URL	Accesos	Resultado
+GET	/api/publico	Todos (incluido anónimo)	200 OK
+GET	/api/interno	Usuarios autenticados (con credenciales)	200 OK
+GET	/api/admin/gestion	Solo usuarios con rol ROLE_ADMIN	200 OK (admin) / 403 Forbidden (usuario)
+Entregables
 
-Emtregables
-seguridad_db.sql = dentro de la raiz del proyecto
-Entregables = (carpeta con todas las pruebas)
+seguridad_db.sql: Este archivo contiene la estructura de la base de datos y está ubicado dentro de la raíz del proyecto.
+
+Carpeta de pruebas: Incluye todas las pruebas realizadas, incluyendo los casos de uso en Postman.
 
 Pruebas de Postman
-Usuario admin 
-/api/admin/gestion → 200 OK
 
-Usuario empleado 
-/api/admin/gestion → 403 Forbidden
+A continuación se describen las pruebas realizadas con Postman:
 
-Con credenciales 
-/api/interno → 200 OK
+Usuario admin:
+Endpoint: /api/admin/gestion
+Resultado esperado: 200 OK
 
-Sin credenciales 
-/api/interno → 401 Unauthorized
+Usuario empleado:
+Endpoint: /api/admin/gestion
+Resultado esperado: 403 Forbidden
+
+Con credenciales válidas:
+Endpoint: /api/interno
+Resultado esperado: 200 OK
+
+Sin credenciales:
+Endpoint: /api/interno
+Resultado esperado: 401 Unauthorized
