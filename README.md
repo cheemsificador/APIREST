@@ -11,6 +11,7 @@ Tecnologias
 •	Postman
 
 "Contraseña: 12345"
+
 Endpoints
 Metodo	URL	Accesos	Resultado
 GET	/api/publico		Todos (incluido anonimo	200 OK
