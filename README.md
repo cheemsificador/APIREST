@@ -17,7 +17,7 @@ Este proyecto utiliza las siguientes tecnologías:
 ---
 
 
-**Contraseña de ejemplo para autenticación**: `12345`
+**Contraseña para autenticación**: `12345`
 
 ---
 
